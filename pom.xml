@@ -37,6 +37,7 @@
         <jaxb.version>2.3.0</jaxb.version>
         <mapstruct.version>1.4.1.Final</mapstruct.version>
         <awaitility.version>4.0.2</awaitility.version>
+        <spring-cloud.version>2021.0.0</spring-cloud.version>
     </properties>
 
     <dependencyManagement>
@@ -67,6 +68,13 @@
                 <version>${awaitility.version}</version>
                 <scope>test</scope>
             </dependency>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
@@ -93,6 +101,10 @@
             <artifactId>spring-boot-devtools</artifactId>
             <scope>runtime</scope>
             <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
         </dependency>
 
 <!--        App dependencies -->
